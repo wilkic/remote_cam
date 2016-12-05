@@ -1,0 +1,15 @@
+
+
+# running a script at boot
+1) make all paths absolute
+2) in /etc/rc.local add this:
+su - acp -c /home/acp/work/remote_cam_upload/run_cam_pass.sh &
+3) sudo reboot
+ .. as opposed to "sudo poweroff"
+
+
+
+ # Grabing frames from stream with ffmpeg
+ffmpeg -r 25 -y -i rtsp://192.168.1.2:554/live0.264 -updatefirst 1 -r 2 cam.bmp
+
+
